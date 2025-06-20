@@ -19,6 +19,18 @@ lv_area_t area;
 LEDMatrix ecran(D8, D2, D7, D3, D5, D12, D10, D11, D9, D0, D1, D4, D6);
 
 uint8_t bufferEcran[64 * 32 * 2] = {0};
+int gomme=0;
+lv_obj_t *btn1; 
+lv_obj_t *btn2;
+lv_obj_t *btn3; 
+lv_obj_t *btn4; 
+lv_obj_t *btn5; 
+lv_obj_t *btn6; 
+lv_obj_t *btn7; 
+lv_obj_t *btn8; 
+lv_obj_t *btn9; 
+lv_obj_t *btn10; 
+
 
 /*static void event_handler(lv_event_t *e)
 {
@@ -39,59 +51,171 @@ void bouton1_event_cb(lv_event_t *e)
 {
 
   color = 1; // rouge
+  gomme=0;
+
+  lv_obj_clear_state(btn2, LV_STATE_CHECKED);
+  lv_obj_clear_state(btn3, LV_STATE_CHECKED);
+  lv_obj_clear_state(btn4, LV_STATE_CHECKED);
+  lv_obj_clear_state(btn5, LV_STATE_CHECKED);
+  lv_obj_clear_state(btn6, LV_STATE_CHECKED);
+  lv_obj_clear_state(btn7, LV_STATE_CHECKED);
+  lv_obj_clear_state(btn8, LV_STATE_CHECKED);
+  lv_obj_clear_state(btn9, LV_STATE_CHECKED);
+  lv_obj_clear_state(btn10, LV_STATE_CHECKED);
+    
 }
 
 void bouton2_event_cb(lv_event_t *e)
 {
 
   color = 2; // vert
+  gomme=0;
+    lv_obj_clear_state(btn1, LV_STATE_CHECKED);
+  lv_obj_clear_state(btn3, LV_STATE_CHECKED);
+  lv_obj_clear_state(btn4, LV_STATE_CHECKED);
+  lv_obj_clear_state(btn5, LV_STATE_CHECKED);
+  lv_obj_clear_state(btn6, LV_STATE_CHECKED);
+  lv_obj_clear_state(btn7, LV_STATE_CHECKED);
+  lv_obj_clear_state(btn8, LV_STATE_CHECKED);
+  lv_obj_clear_state(btn9, LV_STATE_CHECKED);
+  lv_obj_clear_state(btn10, LV_STATE_CHECKED);
 }
 void bouton3_event_cb(lv_event_t *e)
 {
 
   color = 3; // Jaune
+  gomme=0;
+    lv_obj_clear_state(btn1, LV_STATE_CHECKED);
+  lv_obj_clear_state(btn2, LV_STATE_CHECKED);
+  lv_obj_clear_state(btn4, LV_STATE_CHECKED);
+  lv_obj_clear_state(btn5, LV_STATE_CHECKED);
+  lv_obj_clear_state(btn6, LV_STATE_CHECKED);
+  lv_obj_clear_state(btn7, LV_STATE_CHECKED);
+  lv_obj_clear_state(btn8, LV_STATE_CHECKED);
+  lv_obj_clear_state(btn9, LV_STATE_CHECKED);
+  lv_obj_clear_state(btn10, LV_STATE_CHECKED);
 }
 void bouton4_event_cb(lv_event_t *e)
 {
 
   color = 0; // Noir
+  gomme=1;
+  lv_obj_clear_state(btn1, LV_STATE_CHECKED);
+  lv_obj_clear_state(btn2, LV_STATE_CHECKED);
+  lv_obj_clear_state(btn3, LV_STATE_CHECKED);
+  lv_obj_clear_state(btn5, LV_STATE_CHECKED);
+  lv_obj_clear_state(btn6, LV_STATE_CHECKED);
+  lv_obj_clear_state(btn7, LV_STATE_CHECKED);
+  lv_obj_clear_state(btn8, LV_STATE_CHECKED);
+  lv_obj_clear_state(btn9, LV_STATE_CHECKED);
+  lv_obj_clear_state(btn10, LV_STATE_CHECKED);
 }
 
 void bouton5_event_cb(lv_event_t *e)
 {
 
   color = 4; // Bleu
+  gomme=0;
+    lv_obj_clear_state(btn1, LV_STATE_CHECKED);
+  lv_obj_clear_state(btn2, LV_STATE_CHECKED);
+  lv_obj_clear_state(btn3, LV_STATE_CHECKED);
+  lv_obj_clear_state(btn4, LV_STATE_CHECKED);
+  lv_obj_clear_state(btn6, LV_STATE_CHECKED);
+  lv_obj_clear_state(btn7, LV_STATE_CHECKED);
+  lv_obj_clear_state(btn8, LV_STATE_CHECKED);
+  lv_obj_clear_state(btn9, LV_STATE_CHECKED);
+  lv_obj_clear_state(btn10, LV_STATE_CHECKED);
 }
 void bouton6_event_cb(lv_event_t *e)
 {
 
   color = 5; // Bleu
+  gomme=0;
+   lv_obj_clear_state(btn1, LV_STATE_CHECKED);
+  lv_obj_clear_state(btn2, LV_STATE_CHECKED);
+  lv_obj_clear_state(btn3, LV_STATE_CHECKED);
+  lv_obj_clear_state(btn4, LV_STATE_CHECKED);
+  lv_obj_clear_state(btn5, LV_STATE_CHECKED);
+  lv_obj_clear_state(btn7, LV_STATE_CHECKED);
+  lv_obj_clear_state(btn8, LV_STATE_CHECKED);
+  lv_obj_clear_state(btn9, LV_STATE_CHECKED);
+  lv_obj_clear_state(btn10, LV_STATE_CHECKED);
 }
 void bouton7_event_cb(lv_event_t *e)
 {
 
   color = 6; // Bleu
+  gomme=0;
+  lv_obj_clear_state(btn1, LV_STATE_CHECKED);
+  lv_obj_clear_state(btn2, LV_STATE_CHECKED);
+  lv_obj_clear_state(btn3, LV_STATE_CHECKED);
+  lv_obj_clear_state(btn4, LV_STATE_CHECKED);
+  lv_obj_clear_state(btn5, LV_STATE_CHECKED);
+  lv_obj_clear_state(btn6, LV_STATE_CHECKED);
+  lv_obj_clear_state(btn8, LV_STATE_CHECKED);
+  lv_obj_clear_state(btn9, LV_STATE_CHECKED);
+  lv_obj_clear_state(btn10, LV_STATE_CHECKED);
 }
 
 void bouton8_event_cb(lv_event_t *e)
 {
 
   color = 7; // Bleu
+  gomme=0;
+    lv_obj_clear_state(btn1, LV_STATE_CHECKED);
+  lv_obj_clear_state(btn2, LV_STATE_CHECKED);
+  lv_obj_clear_state(btn3, LV_STATE_CHECKED);
+  lv_obj_clear_state(btn4, LV_STATE_CHECKED);
+  lv_obj_clear_state(btn5, LV_STATE_CHECKED);
+  lv_obj_clear_state(btn6, LV_STATE_CHECKED);
+  lv_obj_clear_state(btn7, LV_STATE_CHECKED);
+  lv_obj_clear_state(btn9, LV_STATE_CHECKED);
+  lv_obj_clear_state(btn10, LV_STATE_CHECKED);
 }
 
 void bouton9_event_cb(lv_event_t *e)
 {
-  for (int i = 0; i < 64; i++)
+  
+ 
   {
-    for (int j = 0; j < 32; j++)
+    for (int i = 0; i < 64; i++)
     {
-      ecran.drawPointDirect(i, j, 0);
+      for (int j = 0; j < 32; j++)
+      {
+        ecran.drawPointDirect(i, j, color);
+      }
     }
-  }
+  
 
   lv_area_set(&area, 0, 51, 480, 272);
   lv_inv_area(NULL, &area);
- 
+  gomme=0;
+}
+  lv_obj_clear_state(btn1, LV_STATE_CHECKED);
+  lv_obj_clear_state(btn2, LV_STATE_CHECKED);
+  lv_obj_clear_state(btn3, LV_STATE_CHECKED);
+  lv_obj_clear_state(btn4, LV_STATE_CHECKED);
+  lv_obj_clear_state(btn5, LV_STATE_CHECKED);
+  lv_obj_clear_state(btn6, LV_STATE_CHECKED);
+  lv_obj_clear_state(btn7, LV_STATE_CHECKED);
+  lv_obj_clear_state(btn8, LV_STATE_CHECKED);
+  lv_obj_clear_state(btn10, LV_STATE_CHECKED);
+}
+void bouton10_event_cb(lv_event_t *e)
+{
+
+  color = 0; // Bleu
+  gomme=0;
+
+    lv_obj_clear_state(btn1, LV_STATE_CHECKED);
+  lv_obj_clear_state(btn2, LV_STATE_CHECKED);
+  lv_obj_clear_state(btn3, LV_STATE_CHECKED);
+  lv_obj_clear_state(btn4, LV_STATE_CHECKED);
+  lv_obj_clear_state(btn5, LV_STATE_CHECKED);
+  lv_obj_clear_state(btn6, LV_STATE_CHECKED);
+  lv_obj_clear_state(btn7, LV_STATE_CHECKED);
+  lv_obj_clear_state(btn8, LV_STATE_CHECKED);
+  lv_obj_clear_state(btn9, LV_STATE_CHECKED);
 }
 
 void testLvgl()
@@ -99,32 +223,36 @@ void testLvgl()
   // Initialisations générales
   lv_obj_t *label;
 
-  lv_obj_t *btn1 = lv_button_create(lv_screen_active());
-  lv_obj_set_size(btn1, 53, 50);
+  btn1 = lv_button_create(lv_screen_active());
+  lv_obj_set_size(btn1, 48, 50);
   lv_obj_align(btn1, LV_ALIGN_TOP_LEFT, 0, 0);
-  lv_obj_remove_flag(btn1, LV_OBJ_FLAG_PRESS_LOCK);
+  //lv_obj_remove_flag(btn1, LV_OBJ_FLAG_PRESS_LOCK);
   lv_obj_add_event_cb(btn1, bouton1_event_cb, LV_EVENT_CLICKED, NULL);
+  lv_obj_add_flag(btn1, LV_OBJ_FLAG_CHECKABLE);
 
   label = lv_label_create(btn1);
   lv_label_set_text(label, "Rouge");
   lv_obj_center(label);
-  lv_obj_set_style_bg_color(btn1, lv_palette_main(LV_PALETTE_RED), 0);
+  lv_obj_set_style_bg_color(btn1, lv_palette_main(LV_PALETTE_BROWN), 0);
 
-  lv_obj_t *btn2 = lv_button_create(lv_screen_active());
-  lv_obj_set_size(btn2, 53, 50);
-  lv_obj_align(btn2, LV_ALIGN_TOP_LEFT, 209, 0);
-  lv_obj_remove_flag(btn2, LV_OBJ_FLAG_PRESS_LOCK);
+   btn2 = lv_button_create(lv_screen_active());
+  lv_obj_set_size(btn2, 48, 50);
+  lv_obj_align(btn2, LV_ALIGN_TOP_LEFT, 432, 0);
+  //lv_obj_remove_flag(btn2, LV_OBJ_FLAG_PRESS_LOCK);
 
   label = lv_label_create(btn2);
   lv_label_set_text(label, "Vert");
   lv_obj_center(label);
   lv_obj_add_event_cb(btn2, bouton2_event_cb, LV_EVENT_CLICKED, NULL);
   lv_obj_set_style_bg_color(btn2, lv_palette_main(LV_PALETTE_GREEN), 0);
+  lv_obj_add_flag(btn2, LV_OBJ_FLAG_CHECKABLE);
+  
 
-  lv_obj_t *btn3 = lv_button_create(lv_screen_active());
-  lv_obj_set_size(btn3, 53, 50);
-  lv_obj_align(btn3, LV_ALIGN_TOP_LEFT, 262, 0);
-  lv_obj_remove_flag(btn3, LV_OBJ_FLAG_PRESS_LOCK);
+  btn3 = lv_button_create(lv_screen_active());
+  lv_obj_set_size(btn3, 48, 50);
+  lv_obj_align(btn3, LV_ALIGN_TOP_LEFT, 192, 0);
+  //lv_obj_remove_flag(btn3, LV_OBJ_FLAG_PRESS_LOCK);
+  lv_obj_add_flag(btn3, LV_OBJ_FLAG_CHECKABLE);
 
   label = lv_label_create(btn3);
   lv_label_set_text(label, "Jaune");
@@ -132,20 +260,22 @@ void testLvgl()
   lv_obj_add_event_cb(btn3, bouton3_event_cb, LV_EVENT_CLICKED, NULL);
   lv_obj_set_style_bg_color(btn3, lv_palette_main(LV_PALETTE_YELLOW), 0);
 
-  lv_obj_t *btn4 = lv_button_create(lv_screen_active());
-  lv_obj_set_size(btn4, 53, 50);
-  lv_obj_align(btn4, LV_ALIGN_TOP_LEFT, 421, 0);
-  lv_obj_remove_flag(btn4, LV_OBJ_FLAG_PRESS_LOCK);
+  btn4 = lv_button_create(lv_screen_active());
+  lv_obj_set_size(btn4, 48, 50);
+  lv_obj_align(btn4, LV_ALIGN_TOP_LEFT, 336, 0);
+  //lv_obj_remove_flag(btn4, LV_OBJ_FLAG_PRESS_LOCK);
+  lv_obj_add_flag(btn4, LV_OBJ_FLAG_CHECKABLE);
 
   label = lv_label_create(btn4);
   lv_label_set_text(label, "Gomme");
   lv_obj_center(label);
   lv_obj_add_event_cb(btn4, bouton4_event_cb, LV_EVENT_CLICKED, NULL);
 
-  lv_obj_t *btn5 = lv_button_create(lv_screen_active());
-  lv_obj_set_size(btn5, 53, 50);
-  lv_obj_align(btn5, LV_ALIGN_TOP_LEFT, 106, 0);
-  lv_obj_remove_flag(btn5, LV_OBJ_FLAG_PRESS_LOCK);
+  btn5 = lv_button_create(lv_screen_active());
+  lv_obj_set_size(btn5, 48, 50);
+  lv_obj_align(btn5, LV_ALIGN_TOP_LEFT, 96, 0);
+  //lv_obj_remove_flag(btn5, LV_OBJ_FLAG_PRESS_LOCK);
+  lv_obj_add_flag(btn5, LV_OBJ_FLAG_CHECKABLE);
   lv_obj_set_style_bg_color(btn5, lv_palette_main(LV_PALETTE_BROWN), 0);
 
   label = lv_label_create(btn5);
@@ -154,10 +284,11 @@ void testLvgl()
   lv_obj_add_event_cb(btn5, bouton5_event_cb, LV_EVENT_CLICKED, NULL);
   lv_obj_set_style_bg_color(btn5, lv_palette_main(LV_PALETTE_BLUE), 0);
 
-  lv_obj_t *btn6 = lv_button_create(lv_screen_active());
-  lv_obj_set_size(btn6, 53, 50);
-  lv_obj_align(btn6, LV_ALIGN_TOP_LEFT, 53, 0);
-  lv_obj_remove_flag(btn6, LV_OBJ_FLAG_PRESS_LOCK);
+  btn6 = lv_button_create(lv_screen_active());
+  lv_obj_set_size(btn6, 48, 50);
+  lv_obj_align(btn6, LV_ALIGN_TOP_LEFT, 48, 0);
+ // lv_obj_remove_flag(btn6, LV_OBJ_FLAG_PRESS_LOCK);
+  lv_obj_add_flag(btn6, LV_OBJ_FLAG_CHECKABLE);
 
   label = lv_label_create(btn6);
   lv_label_set_text(label, "Violet");
@@ -165,10 +296,11 @@ void testLvgl()
   lv_obj_add_event_cb(btn6, bouton6_event_cb, LV_EVENT_CLICKED, NULL);
   lv_obj_set_style_bg_color(btn6, lv_palette_main(LV_PALETTE_PURPLE), 0);
 
-  lv_obj_t *btn7 = lv_button_create(lv_screen_active());
-  lv_obj_set_size(btn7, 53, 50);
-  lv_obj_align(btn7, LV_ALIGN_TOP_LEFT, 159, 0);
-  lv_obj_remove_flag(btn7, LV_OBJ_FLAG_PRESS_LOCK);
+  btn7 = lv_button_create(lv_screen_active());
+  lv_obj_set_size(btn7, 48, 50);
+  lv_obj_align(btn7, LV_ALIGN_TOP_LEFT, 144, 0);
+  //lv_obj_remove_flag(btn7, LV_OBJ_FLAG_PRESS_LOCK);
+  lv_obj_add_flag(btn7, LV_OBJ_FLAG_CHECKABLE);
 
   label = lv_label_create(btn7);
   lv_label_set_text(label, "Cyan");
@@ -176,10 +308,11 @@ void testLvgl()
   lv_obj_add_event_cb(btn7, bouton7_event_cb, LV_EVENT_CLICKED, NULL);
   lv_obj_set_style_bg_color(btn7, lv_palette_main(LV_PALETTE_CYAN), 0);
 
-  lv_obj_t *btn8 = lv_button_create(lv_screen_active());
-  lv_obj_set_size(btn8, 53, 50);
-  lv_obj_align(btn8, LV_ALIGN_TOP_LEFT, 315, 0);
-  lv_obj_remove_flag(btn8, LV_OBJ_FLAG_PRESS_LOCK);
+  btn8 = lv_button_create(lv_screen_active());
+  lv_obj_set_size(btn8, 48, 50);
+  lv_obj_align(btn8, LV_ALIGN_TOP_LEFT, 240, 0);
+  //lv_obj_remove_flag(btn8, LV_OBJ_FLAG_PRESS_LOCK);
+  lv_obj_add_flag(btn8, LV_OBJ_FLAG_CHECKABLE);
 
   label = lv_label_create(btn8);
   lv_label_set_text(label, "Blanc");
@@ -187,15 +320,43 @@ void testLvgl()
   lv_obj_add_event_cb(btn8, bouton8_event_cb, LV_EVENT_CLICKED, NULL);
   lv_obj_set_style_bg_color(btn8, lv_palette_main(LV_PALETTE_TEAL), 0);
 
-  lv_obj_t *btn9 = lv_button_create(lv_screen_active());
-  lv_obj_set_size(btn9, 53, 50);
-  lv_obj_align(btn9, LV_ALIGN_TOP_LEFT, 368, 0);
-  lv_obj_remove_flag(btn9, LV_OBJ_FLAG_PRESS_LOCK);
+  btn9 = lv_button_create(lv_screen_active());
+  lv_obj_set_size(btn9, 48, 50);
+  lv_obj_align(btn9, LV_ALIGN_TOP_LEFT, 288, 0);
+  //lv_obj_remove_flag(btn9, LV_OBJ_FLAG_PRESS_LOCK);
+  lv_obj_add_flag(btn9, LV_OBJ_FLAG_CHECKABLE);
 
   label = lv_label_create(btn9);
-  lv_label_set_text(label, "Clear");
+  lv_label_set_text(label, "Fullscreen");
   lv_obj_center(label);
   lv_obj_add_event_cb(btn9, bouton9_event_cb, LV_EVENT_CLICKED, NULL);
+
+
+
+
+  btn10 = lv_button_create(lv_screen_active());
+  lv_obj_set_size(btn10, 48, 50);
+  lv_obj_align(btn10, LV_ALIGN_TOP_LEFT, 384, 0);
+  //lv_obj_remove_flag(btn10, LV_OBJ_FLAG_PRESS_LOCK);
+  lv_obj_add_flag(btn10, LV_OBJ_FLAG_CHECKABLE);
+
+  label = lv_label_create(btn10);
+  lv_label_set_text(label, "Noir");
+  lv_obj_center(label);
+  lv_obj_add_event_cb(btn10, bouton10_event_cb, LV_EVENT_CLICKED, NULL);
+
+
+   /*lv_obj_t * btn10 = lv_button_create(lv_screen_active());
+  lv_obj_add_event_cb(btn10, bouton10_event_cb, LV_EVENT_ALL, NULL);
+  lv_obj_align(btn10, LV_ALIGN_CENTER, 270, 0);
+  lv_obj_add_flag(btn10, LV_OBJ_FLAG_CHECKABLE);
+  lv_obj_set_height(btn10, LV_SIZE_CONTENT);
+
+  label = lv_label_create(btn10);
+  lv_label_set_text(label, "Noir");
+  lv_obj_center(label);*/
+
+ 
 }
 
 #ifdef ARDUINO
@@ -285,8 +446,9 @@ void myTask(void *pvParameters)
     {
       if ((point.x != oldPoint.x) || (point.y != oldPoint.y))
       {
-        if (color != 0)
+        if (gomme == 0)
         {
+          ecran.drawPointDirect(point.x, point.y, 0);
           ecran.drawPointDirect(point.x, point.y, color);
           lv_lock();
           lv_area_set(&area, point.x * 7.5, point.y * 6.9 + 51, (point.x + 1) * 7.5, (point.y + 1) * 6.9 + 51);
@@ -295,7 +457,7 @@ void myTask(void *pvParameters)
           oldPoint = point;
         }
 
-        else
+       if (gomme == 1)
         {
           for (int i = 0; i < 4; i++)
           {
