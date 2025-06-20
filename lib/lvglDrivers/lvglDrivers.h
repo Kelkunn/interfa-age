@@ -8,5 +8,6 @@
 
 void mySetup();
 void myTask(void *pvParameters);
+void myMatrixTask(void *pvParameters);
 
 #endif // LVGL_DRIVERS_H

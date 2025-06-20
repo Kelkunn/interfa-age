@@ -57,6 +57,7 @@ void lv_refr_now(lv_display_t * disp);
  */
 void lv_obj_redraw(lv_layer_t * layer, lv_obj_t * obj);
 
+void lv_inv_area(lv_display_t * disp, const lv_area_t * area_p);
 /**********************
  *   STATIC FUNCTIONS
  **********************/

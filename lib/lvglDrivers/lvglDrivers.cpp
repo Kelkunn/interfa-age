@@ -3,6 +3,8 @@
 #include "stm32746g_discovery_lcd.h"
 #include "stm32746g_discovery_ts.h"
 
+extern uint8_t bufferEcran[64 * 32 * 2];
+
 static void lvglTask(void *pvParameters)
 {
     while (1)
@@ -14,12 +16,26 @@ static void lvglTask(void *pvParameters)
 
 static void my_flush_cb(lv_display_t *display, const lv_area_t *area, uint8_t *px_map)
 {
+    // Serial.printf("%3d %3d %3d %3d\n", area->x1, area->y1, area->x2, area->y2);
     uint32_t *buf = (uint32_t *)px_map;
     int32_t x, y;
     for (y = area->y1; y <= area->y2; y++)
     {
         for (x = area->x1; x <= area->x2; x++)
         {
+            int index_x = x / 7.5;
+            if (y >= 51)
+            {                
+                int index_y = (y - 51) / 6.9;
+                if (index_x >= 0 && index_x < 64 && index_y >= 0 && index_y < 32)
+                {
+                    int data = bufferEcran[index_y * 64 + index_x];
+                    *buf = 0xFF000000;
+                    if (data & 1) *buf |= 0x00FF0000;
+                    if (data & 2) *buf |= 0x0000FF00;
+                    if (data & 4) *buf |= 0x000000FF;
+                }
+            }
             BSP_LCD_DrawPixel(x, y, *buf);
             buf++;
         }
@@ -59,9 +75,8 @@ void setup()
 
     lv_init();
 
-    lv_log_register_print_cb([](lv_log_level_t level, const char *buf) {
-        Serial.printf("%s", buf);
-    });
+    lv_log_register_print_cb([](lv_log_level_t level, const char *buf)
+                             { Serial.printf("%s", buf); });
 
     lv_display_t *display = lv_display_create(480, 272);
 
@@ -79,10 +94,12 @@ void setup()
 
     mySetup();
 
-    xTaskCreate(lvglTask, NULL, 16384, NULL, osPriorityNormal, NULL);
-    xTaskCreate(myTask, NULL, 16384, NULL, osPriorityNormal, NULL);
+    xTaskCreate(lvglTask, "lvgl", 8192, NULL, osPriorityNormal, NULL);
+    xTaskCreate(myTask, "task", 8192, NULL, osPriorityNormal, NULL);
+    xTaskCreate(myMatrixTask, "matrix", 8192, NULL, osPriorityHigh, NULL);
 
     vTaskStartScheduler();
     Serial.println("Insufficient RAM");
-    while (1);
+    while (1)
+        ;
 }
